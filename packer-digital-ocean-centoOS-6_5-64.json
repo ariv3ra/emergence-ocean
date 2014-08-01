@@ -1,0 +1,30 @@
+{
+    "builders": [
+        {
+            "client_id": "[YOUR CLIENT ID]",            
+            "api_key": "[YOUR API KEY]",
+            "image": "centos-6-5-x64",
+            "region": "nyc2",
+            "ssh_username": "root",
+            "ssh_timeout": "30m",
+            "type": "digitalocean",
+            "snapshot_name": "packer-centos-6_4-64"
+        }
+    ],
+    "provisioners": [
+        {
+          "type": "file",
+          "source": "http/id_rsa",
+          "destination": "/tmp/id_rsa"
+        },
+        {
+          "type": "file",
+          "source": "http/id_rsa.pub",
+          "destination": "/tmp/id_rsa.pub"
+        },    
+        {
+            "type": "shell",
+            "script": "provisioners/baseDO.sh"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+*.box
+output-*/*
+packer_cache/*
+id_rsa
+id_rsa.pub
+proto-packer-digital-ocean-centoOS-6_5-64.json
+.gitignore~
+
