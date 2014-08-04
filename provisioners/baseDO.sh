@@ -55,11 +55,11 @@ npm install -g
 # Move emergence-kernel startup script
 mv /tmp/emergence-kernel.sh /etc/init.d/emergence-kernel
 
+# Make emergence-kernel executable
+chmod +x /etc/init.d/emergence-kernel
+
 # Add emergence-kernel service to auto start on systemd
 chkconfig --level 345 emergence-kernel on
-
-# Make emergence-kernel executable
-chmod -x /etc/init.d/emergence-kernel
 
 # Start Emergence
 # service emergence-kernel start

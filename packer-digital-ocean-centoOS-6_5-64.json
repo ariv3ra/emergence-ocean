@@ -9,7 +9,7 @@
             "ssh_timeout": "30m",
             "type": "digitalocean",
             "droplet_name" : "emergence",
-            "snapshot_name": "emergence-centos-6_4-64"
+            "snapshot_name": "emergence-centos-6_5-64"
         }
     ],
     "provisioners": [
