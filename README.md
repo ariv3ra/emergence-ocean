@@ -1,4 +1,4 @@
-emergence-ocean
+Emergence-Ocean
 ===============
 
 Emergence-Ocean is an open source project that enables users to automatedly create & configure a Digital Ocean image with the [Jarvus Innovations](http://jarv.us) [Emergence](http://emr.ge/) app stack.  Emergence-Ocean is based on the [packer.io project](http://www.packer.io).
