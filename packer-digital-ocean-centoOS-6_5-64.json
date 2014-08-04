@@ -30,7 +30,7 @@
         },    
         {
             "type": "shell",
-            "script": "provisioners/baseDO.sh"
+            "script": "provisioners/base-centOS-DO.sh"
         }
     ]
 }
