@@ -13,14 +13,14 @@ Emergence-Ocean is an open source project that enables users to automatedly crea
 * Must have a [Digital Ocean](https://www.digitalocean.com) Account
 * You'll need your Digital Ocean account [client & api keys](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api) See *Steps One & Two* in this tutorial to get your keys
 
-
 ##Configure the Packer Builder Files
 * Open the packer-digital-ocean-centOS-6_5-64.json in your fav text editor
 * Paste your Digital Ocean Client & API Keys and save the file with your changes
 
 ```
-    "client_id": "[YOUR CLIENT ID]",            
-    "api_key": "[YOUR API KEY]",
+Example:
+        "client_id": "a457648473373cghw233",            
+        "api_key": "78uiueue98eieieeuee",        
 ```
 
 ##Add Your SSH Certs to your Digital Ocean Image
