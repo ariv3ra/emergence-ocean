@@ -13,7 +13,7 @@ yum -y groupinstall "Development Tools"
 #Install the required packages
 yum -y install ntp ntpdate ntp-doc git nano wget python gcc-c++ make ruby rubygems\
  nginx php-fpm php-cli php-pecl-apc php-mysql php-gd php-json php-curl\
- php-intl mysql msql-server gettext ImageMagick postfix 
+ php-intl mysql mysql-server gettext ImageMagick postfix 
 
 #Install ruby gem
 gem update --system
