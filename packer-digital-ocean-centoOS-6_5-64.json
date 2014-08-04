@@ -8,10 +8,16 @@
             "ssh_username": "root",
             "ssh_timeout": "30m",
             "type": "digitalocean",
-            "snapshot_name": "packer-centos-6_4-64"
+            "droplet_name" : "emergence",
+            "snapshot_name": "emergence-centos-6_4-64"
         }
     ],
     "provisioners": [
+        {
+          "type": "file",
+          "source": "inc_files/emergence-kernel.sh",
+          "destination": "/tmp/emergence-kernel.sh"
+        },
         {
           "type": "file",
           "source": "http/id_rsa",
