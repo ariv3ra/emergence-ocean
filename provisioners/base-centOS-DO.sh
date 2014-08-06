@@ -1,6 +1,10 @@
 #!/bin/bash -eux
 
-# Add the
+# Add a repo file for the nginx upgrade
+mv /tmp/nginx.repo /etc/yum.repos.d/nginx.repo
+
+
+# Add the EPEL Repos
 yum -y install \
  http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
@@ -49,7 +53,11 @@ echo -e "apcu.shm_size=128M\napc.shm_size=128M" | sudo tee -a /etc/php.d/apcu.in
 # sudo /etc/init.d/apparmor reload
 
 #Clone the Emergence repo
-git clone https://github.com/JarvusInnovations/Emergence ~/Emergence && cd ~/Emergence
+# Original Line:  git clone https://github.com/JarvusInnovations/Emergence ~/Emergence && cd ~/Emergence
+
+#using the ariv3ra site
+git clone https://github.com/ariv3ra/Emergence.git ~/Emergence && cd ~/Emergence
+
 npm install -g
 
 # Move emergence-kernel startup script

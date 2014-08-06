@@ -20,6 +20,11 @@
         },
         {
           "type": "file",
+          "source": "inc_files/nginx.repo",
+          "destination": "/tmp/nginx.repo"
+        },
+        {
+          "type": "file",
           "source": "http/id_rsa",
           "destination": "/tmp/id_rsa"
         },

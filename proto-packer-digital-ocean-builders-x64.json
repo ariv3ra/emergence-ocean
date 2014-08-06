@@ -1,0 +1,60 @@
+{
+    "builders": [
+        {
+            "name" : "ubuntu14_04x64",
+            "type" : "digitalocean",
+            "client_id": "3cf622a8cd98f90de9e20c334bc5f659",            
+            "api_key": "237d0fed7635b530671e232e88d87cd6",
+            "image": "ubuntu-14-04-x64",
+            "region": "nyc2",
+            "ssh_username": "root",
+            "ssh_timeout": "30m",
+            "droplet_name" : "emergence-ub",
+            "snapshot_name": "emergence-ubuntu-14_04x64"
+        },
+        {
+            "name" : "centos6-5-x64",
+            "type" : "digitalocean",
+            "client_id": "3cf622a8cd98f90de9e20c334bc5f659",            
+            "api_key": "237d0fed7635b530671e232e88d87cd6",
+            "image": "centos-6-5-x64",
+            "region": "nyc2",
+            "ssh_username": "root",
+            "ssh_timeout": "30m",
+            "droplet_name" : "emergence-centos",
+            "snapshot_name": "emergence-centos-6_5-64"
+        }
+    ],
+    "provisioners": [
+        {
+          "type": "file",
+          "source": "inc_files/emergence-kernel.sh",
+          "destination": "/tmp/emergence-kernel.sh"
+        },
+        {
+          "type": "file",
+          "source": "inc_files/nginx.repo",
+          "destination": "/tmp/nginx.repo"
+        },
+        {
+          "type": "file",
+          "source": "inc_files/id_rsa",
+          "destination": "/tmp/id_rsa"
+        },
+        {
+          "type": "file",
+          "source": "inc_files/id_rsa.pub",
+          "destination": "/tmp/id_rsa.pub"
+        },    
+        {
+            "only" : ["centos6-5-x64"],
+            "type": "shell",
+            "script": "provisioners/base-centOS-DO.sh"
+        },
+        {
+            "only" : ["ubuntu14_04x64"],
+            "type": "shell",
+            "script": "provisioners/base-ubuntu-DO.sh"
+        }
+    ]
+}
