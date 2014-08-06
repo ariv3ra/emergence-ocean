@@ -31,7 +31,14 @@ You can upload your personal SSH certificates to the Digital Ocean image
 At this point you're ready to execute packer & build your new Digital Ocean image.
 * Open a Terminal or Console Shell & type the packer build command:
 ```shell
-    $ packer build packer-digital-ocean-centOS-6_5-64.json
+	Use this for an Ubuntu 14.04 build
+
+    $ packer build -only=ubuntu14_04x64 packer-digital-ocean-builders-x64.json
+
+    Use this for CentOS packer builds
+
+    $ packer build -only=centos6-5-x64 packer-digital-ocean-builders-x64.json
+
 ```
 The packer build process will begin and you can watch the build process progress in the terminal (usually takes 10 minutes). When the build process successfully completes your new Emergence image will be available in your Digital Ocean account and you can create a new Droplet based on this image
 
